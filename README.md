@@ -1,6 +1,6 @@
 # AWS Service Catalog Framework with Cross Account CodePipelines
 
-This repository consists of a framework to deploy an [AWS Service Catalog](https://aws.amazon.com/servicecatalog/) Portfolio and a [Cross Account CodePipeline](three-stage-cross-account-pipeline-sc-product/README.md) product.
+This repository consists of a framework to deploy an [AWS Service Catalog](https://aws.amazon.com/servicecatalog/) Portfolio and a [Cross Account CodePipeline](https://github.com/karldthomas/service-catalog-framework-with-cross-account-codepipeline/tree/main/three-stage-cross-account-pipeline) product.
 
 ## Features
 
