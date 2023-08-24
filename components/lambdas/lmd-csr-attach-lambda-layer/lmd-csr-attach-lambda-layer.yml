@@ -22,7 +22,7 @@ Resources:
       FunctionName: cfn-attach-lambda-layer
       CodeUri: ./src
       Handler: index.handler
-      Runtime: python3.7
+      Runtime: python3.9
       Timeout: 60
       Role: !GetAtt AttachLambdaLayeCustomResourceRole.Arn
 

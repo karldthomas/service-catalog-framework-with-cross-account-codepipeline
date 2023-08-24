@@ -1,13 +1,34 @@
-
+# Parse command-line arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --product-template)
+            ProductTemplate="$2"
+            shift 2
+            ;;
+        --config-file)
+            ConfigFile="$2"
+            shift 2
+            ;;
+        --stack-name)
+            StackName="$2"
+            shift 2
+            ;;
+        --portfolio-stack-name)
+            PortfolioStackName="$2"
+            shift 2
+            ;;
+        *)
+            echo "Unknown argument: $1"
+            exit 1
+            ;;
+    esac
+done
 
 
 set -e
 
 
 export VersionDescription="Built on $(date)"
-export ProductTemplate=$1
-export ConfigFile=$2
-export StackName="$3"
 export Nonce=$RANDOM
 
 echo "3"
@@ -81,7 +102,7 @@ fi
 sam package -t $ProductTemplate \
     --output-template-file "$ProductTemplate.tmp" \
     --resolve-s3
-    
+
 export $(aws cloudformation describe-stacks  --stack-name aws-sam-cli-managed-default --output text --query 'Stacks[0].Outputs[].join(`=`, [join(`_`, [`CF`, `OUT`, OutputKey]), OutputValue ])')
 echo "Uploading Service Catalog Product  $ProductTemplate.tmp..."
 export ProductUrl=$(python3 $FrameworkScriptsDir/upload-product-template.py --file-name "$ProductTemplate.tmp" --bucket-name $CF_OUT_SourceBucket --should-version true)

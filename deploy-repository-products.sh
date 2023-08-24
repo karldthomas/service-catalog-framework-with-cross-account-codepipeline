@@ -17,8 +17,9 @@ bash $ScriptsDir/add-environment-variables.sh \
 export ServiceCatalogRoleName=$CF_OUT_ServiceCatalogCloudFormationRole
 
 bash deploy-service-catalog-product.sh \
-     $BASEDIR"/three-stage-cross-account-pipeline/cross-account-pipeline-with-tags.yml.tmp" \
-     $BASEDIR/three-stage-cross-account-pipeline/cross-account-codepipeline.json \
-      three-stage-pipeline 
+     --product-template $BASEDIR"/three-stage-cross-account-pipeline/cross-account-pipeline-with-tags.yml.tmp" \
+     --config-file $BASEDIR/three-stage-cross-account-pipeline/cross-account-codepipeline.json \
+     --stack-name three-stage-pipeline \
+     --portfolio-stack-name service-catalog-portfolio-admin
 
 

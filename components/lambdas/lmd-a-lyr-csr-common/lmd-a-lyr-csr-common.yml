@@ -8,7 +8,7 @@ Resources:
       LayerName: lyr-csr-common
       Description: Common library used by CloudFormation custom resources
       CompatibleRuntimes:
-        - python3.7
+        - python3.9
 Outputs:
   LambdaLayerArn:
     Description: "Custom Resource that returns a list of security groups based on a tag"
