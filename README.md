@@ -117,7 +117,7 @@ From the terminal, after you clone the repository, run the following commands.
 ```bash
 pip3 install -r requirements.txt
 npm install -g cfn-include
-sudo yum install jq
+brew  install jq
 export TargetAccount=$(aws sts get-caller-identity  | jq -r ".Account")
 export Repository="service-catalog"
 export Branch="master"

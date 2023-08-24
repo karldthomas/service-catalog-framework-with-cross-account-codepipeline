@@ -81,8 +81,9 @@ fi
 sam package -t $ProductTemplate \
     --output-template-file "$ProductTemplate.tmp" \
     --resolve-s3
-echo "4"
+    
 export $(aws cloudformation describe-stacks  --stack-name aws-sam-cli-managed-default --output text --query 'Stacks[0].Outputs[].join(`=`, [join(`_`, [`CF`, `OUT`, OutputKey]), OutputValue ])')
+echo "Uploading Service Catalog Product  $ProductTemplate.tmp..."
 export ProductUrl=$(python3 $FrameworkScriptsDir/upload-product-template.py --file-name "$ProductTemplate.tmp" --bucket-name $CF_OUT_SourceBucket --should-version true)
 
 
