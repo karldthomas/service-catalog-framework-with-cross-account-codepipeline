@@ -4,6 +4,10 @@ This repository consists of a framework to deploy an [AWS Service Catalog](https
 
 ## Features
 
+### Support for multiple portfolios
+
+This solution deploys an admin portfolio and an end-user portfolio and allows you to choose which portfolio a product can be placed in.
+
 ### Deploying products
 
 When deploying a Service Catalog product with AWS CloudFormation, you need to specify the Portfolio and the Product defined by a CloudFormation template stored in [Amazon S3](https://aws.amazon.com/s3/).  

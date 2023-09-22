@@ -12,3 +12,10 @@
 ### Fixes
 
 - Corrected Python version specified in the buildspec files
+
+## Version 1.2
+
+### New Features
+
+- Added support for multiple portfolios
+
