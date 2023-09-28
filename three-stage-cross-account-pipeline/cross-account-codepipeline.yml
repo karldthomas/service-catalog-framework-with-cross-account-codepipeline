@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Cross Account CodePipeline Service Catalog Product
-Transform: AWS::Serverless-2016-10-31
+IAMTransform: AWS::Serverless-2016-10-31
 
 Parameters:
   Repository:
@@ -11,7 +11,7 @@ Parameters:
     Description: The destination account
   Branch:
     Type: String
-    Description: Name of the branch that contains the application code.
+    DescripIAMtion: Name of the branch that contains the application code.
     Default: main
   ResourceSuffix:
     Type: String

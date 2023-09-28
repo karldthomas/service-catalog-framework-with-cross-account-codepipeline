@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Resources:
   Layer:
@@ -8,7 +8,7 @@ Resources:
       LayerName: lyr-csr-common
       Description: Common library used by CloudFormation custom resources
       CompatibleRuntimes:
-        - python3.9
+        - python3.10
 Outputs:
   LambdaLayerArn:
     Description: "Custom Resource that returns a list of security groups based on a tag"
